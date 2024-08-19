@@ -1,0 +1,390 @@
+{
+    "idea_definitions": {
+
+    "Sophia": {
+    "definition": "A divine feminine figure embodying wisdom and often associated with the soul of the world. Sophia is central in Gnostic traditions as a fallen figure who seeks redemption, and in Christian mysticism as the personification of divine wisdom.",
+    "source": "Prominent in Gnostic texts like the Pistis Sophia, Christian mysticism, and modern spiritual channelings."
+},
+"Sophiology": {
+    "definition": "A mystical theology focusing on Sophia as the divine wisdom and the feminine aspect of God, emphasizing her role in the creation of the world and the spiritual evolution of humanity.",
+    "source": "Developed by Russian mystics such as Vladimir Solovyov and Sergei Bulgakov, influencing Christian and esoteric thought."
+},
+"Divine Feminine": {
+    "definition": "The concept of the feminine aspect of divinity, often represented by deities or archetypal figures like Sophia, who embodies qualities such as wisdom, nurturing, and creative power. This aspect is seen as complementary to the masculine aspect of the divine.",
+    "source": "Central in various spiritual traditions including Gnosticism, Sophiology, and New Age teachings."
+},
+"Gnostic Sophia": {
+    "definition": "In Gnosticism, Sophia is a complex figure who symbolizes both the wisdom of God and the fall into materiality. Her story often involves her descent from the Pleroma (the divine fullness) and her role in the creation of the material world, followed by a quest for restoration and reunion with the divine.",
+    "source": "Found in Gnostic texts such as the Pistis Sophia, The Apocryphon of John, and the Hypostasis of the Archons."
+},
+"Divine Wisdom (Chokhmah/Sophia)": {
+    "definition": "The personification of wisdom in various spiritual traditions. In Kabbalah, she is known as Chokhmah, the second Sephirah on the Tree of Life, representing intuitive insight. In Christian mysticism, Sophia is the embodiment of divine wisdom, guiding the soul towards spiritual enlightenment.",
+    "source": "Referenced in Jewish Kabbalah, Gnostic scriptures, and Christian mystical writings."
+},
+"Feminine Aspect of God": {
+    "definition": "The theological concept that God encompasses both masculine and feminine qualities. Sophia, as the feminine aspect, is associated with creation, nurturing, and wisdom. This concept challenges traditional patriarchal views of divinity by emphasizing the importance of balance between masculine and feminine energies in the divine and in human spirituality.",
+    "source": "Explored in Sophiology, Gnosticism, Christian mysticism, and modern feminist theology."
+},
+"Fallen Sophia": {
+    "definition": "A specific aspect of Sophia in Gnostic cosmology, representing the descent of divine wisdom into the material world. The 'fall' of Sophia is symbolic of the soul's entrapment in the material realm and its subsequent journey towards redemption and reunion with the divine.",
+    "source": "Central to Gnostic texts like the Apocryphon of John and Pistis Sophia."
+},
+"Redemption of Sophia": {
+    "definition": "The process by which Sophia, after her fall into the material world, seeks to return to the divine realm, often symbolizing the soul's journey toward enlightenment and spiritual awakening. This theme is prominent in Gnostic teachings and represents the hope for spiritual salvation.",
+    "source": "A recurring theme in Gnostic literature such as the Pistis Sophia."
+},
+"Sophianic Mysticism": {
+    "definition": "A spiritual practice and belief system centered on the experience and veneration of Sophia as the divine wisdom and feminine aspect of God. It involves contemplative practices aimed at aligning with the wisdom of Sophia and understanding the deeper truths of existence.",
+    "source": "Found in Christian mysticism, particularly within the works of mystics like Hildegard of Bingen, as well as in modern esoteric traditions."
+},
+"Chokhmah": {
+    "definition": "The Hebrew term for 'wisdom,' personified in Kabbalah as the second Sephirah on the Tree of Life. Chokhmah represents the intuitive and pre-rational aspect of divine wisdom, closely associated with Sophia in Christian mysticism.",
+    "source": "Central to Kabbalistic teachings and often linked with the concept of Sophia in comparative mystical studies."
+},
+"Sophia as World Soul": {
+    "definition": "In some philosophical and mystical traditions, Sophia is seen as the World Soul, a mediating principle between the divine and the material world, responsible for the harmony and order of creation.",
+    "source": "Explored in the works of philosophers like Plotinus and in modern Sophiology."
+},
+"Esoteric Sophia": {
+    "definition": "The hidden or inner aspect of Sophia, representing esoteric wisdom that is accessible only through spiritual insight and initiation. This concept emphasizes the transformative power of Sophia's wisdom for those on the spiritual path.",
+    "source": "Found in esoteric traditions, including Gnosticism, Hermeticism, and modern mystical practices."
+},
+"Shadanakar": {
+    "definition": "The multi-dimensional universe comprising numerous worlds and planes of existence, both material and spiritual.",
+    "source": "Central concept in Daniel Andreev's 'The Rose of the World'."
+},
+"Enrof": {
+    "definition": "The material world or physical reality as experienced by humans, representing the lowest level of Shadanakar.",
+    "source": "Introduced in 'The Rose of the World' by Daniel Andreev."
+},
+"Navna": {
+    "definition": "The spiritual essence or higher self of an individual that transcends physical existence.",
+    "source": "A key concept in Daniel Andreev's spiritual cosmology."
+},
+"Zatomis": {
+    "definition": "Guardian spirits or tutelary entities assigned to nations, regions, or individuals, guiding their spiritual development.",
+    "source": "'The Rose of the World' by Daniel Andreev."
+},
+"Luchetsvet": {
+    "definition": "Radiant spiritual energy emanating from higher planes, influencing and uplifting the material world.",
+    "source": "Described in Daniel Andreev's 'The Rose of the World'."
+},
+"Gagtungr": {
+    "definition": "The principal evil force or demonic entity opposing divine order in Andreev's cosmology.",
+    "source": "Featured as the embodiment of chaos in 'The Rose of the World'."
+},
+"Feminine Demiurge (Utrish)": {
+    "definition": "The creative force responsible for manifesting and nurturing life within the universe, representing the divine feminine principle.",
+    "source": "A concept from Daniel Andreev's 'The Rose of the World'."
+},
+"Rozanitsas": {
+    "definition": "Spiritual entities or muses that inspire human creativity, especially in the arts and literature.",
+    "source": "From 'The Rose of the World' by Daniel Andreev."
+},
+"Velga": {
+    "definition": "The spiritual path of evolution and purification that souls must undertake to ascend through the levels of Shadanakar.",
+    "source": "A spiritual journey concept in 'The Rose of the World'."
+},
+"Satanael": {
+    "definition": "A powerful dark entity or fallen angel in Andreev’s cosmology, symbolizing rebellion against divine order.",
+    "source": "Described in 'The Rose of the World' by Daniel Andreev."
+},
+"Sveti": {
+    "definition": "Paradisiacal realms or layers of existence within Shadanakar filled with divine light.",
+    "source": "'The Rose of the World' by Daniel Andreev."
+},
+"Grads": {
+    "definition": "Large spiritual communities or civilizations existing in various planes within Shadanakar.",
+    "source": "Central to the cosmology in Daniel Andreev's 'The Rose of the World'."
+},
+"Uitzrats": {
+    "definition": "Dark, destructive forces or entities residing in the lower planes of Shadanakar.",
+    "source": "From Daniel Andreev's 'The Rose of the World'."
+},
+"Shemshuk": {
+    "definition": "The spiritual threshold or boundary that souls must cross during their spiritual ascent.",
+    "source": "A concept in 'The Rose of the World' by Daniel Andreev."
+},
+"Oikoumene": {
+    "definition": "The inhabited world or the collective civilization of humanity from a spiritual perspective.",
+    "source": "Used in Daniel Andreev's 'The Rose of the World'."
+},
+"Magga": {
+    "definition": "Spiritual paths or ways followed to achieve enlightenment or spiritual advancement.",
+    "source": "A term from Daniel Andreev's 'The Rose of the World'."
+},
+"Egregores": {
+    "definition": "Collective thought forms or entities created by the collective consciousness of groups or nations.",
+    "source": "Concept from Daniel Andreev's 'The Rose of the World'."
+},
+"Arimoya": {
+    "definition": "The future ideal state or utopian society envisioned by Andreev, where humanity lives in harmony with spiritual laws.",
+    "source": "A visionary concept in 'The Rose of the World' by Daniel Andreev."
+},
+"Karmic Currents": {
+    "definition": "Flows of cause-and-effect relationships that influence the spiritual development of individuals and collectives.",
+    "source": "Described in 'The Rose of the World' by Daniel Andreev."
+},
+"Izidim": {
+    "definition": "Beings or entities dwelling in the lower planes of Shadanakar, often associated with negative or harmful energies.",
+    "source": "From Daniel Andreev's 'The Rose of the World'."
+},
+"Khors": {
+    "definition": "Beings of light inhabiting higher spiritual realms, associated with divine wisdom and guidance.",
+    "source": "'The Rose of the World' by Daniel Andreev."
+},
+"Amitabha": {
+    "definition": "A realm of light and purity within Shadanakar, inspired by the concept of the Pure Land.",
+    "source": "Described in Daniel Andreev's 'The Rose of the World'."
+},
+"Darshan": {
+    "definition": "The spiritual vision or direct experience of the divine, often transformative.",
+    "source": "A concept in 'The Rose of the World' by Daniel Andreev."
+},
+"Pleroma": {
+    "definition": "The fullness of the divine presence and ultimate reality in Andreev's cosmology.",
+    "source": "'The Rose of the World' by Daniel Andreev, inspired by Gnostic thought."
+},
+    "Reincarnation": {
+        "definition": "The belief that the soul is reborn into new bodies across different lifetimes, allowing for spiritual evolution and learning.",
+        "source": "Common across many spiritual traditions including Hinduism, Buddhism, and New Age thought."
+    },
+    "Evolution of Consciousness": {
+        "definition": "The idea that consciousness evolves and expands through experience, learning, and spiritual development over time and across lifetimes.",
+        "source": "Associated with the teachings of Seth, Ra, and various New Age philosophies."
+    },
+    "Free Will": {
+        "definition": "The ability to make choices independently of external determinism, allowing for personal responsibility in one's spiritual journey.",
+        "source": "A fundamental concept in many philosophical and spiritual traditions, including the teachings of Michael, Ra, and Abraham."
+    },
+    "Interconnectedness of All Things": {
+        "definition": "The concept that all beings and phenomena are fundamentally connected at a spiritual and energetic level, implying that actions and thoughts have universal impacts.",
+        "source": "Central to the Law of One (Ra), Eastern philosophies, and many New Age beliefs."
+    },
+    "Reality Creation through Thoughts": {
+        "definition": "The belief that thoughts and beliefs directly shape and create one's reality, emphasizing the power of mindset in manifesting experiences.",
+        "source": "Key concept in the Seth material and Abraham's Law of Attraction."
+    },
+    "Multidimensional Self": {
+        "definition": "The concept that the self exists simultaneously in multiple dimensions or planes of reality, each representing different aspects of one's consciousness.",
+        "source": "Prominent in Seth's teachings and other New Age metaphysical frameworks."
+    },
+    "Simultaneous Time": {
+        "definition": "The idea that time is not linear but exists simultaneously in multiple forms, suggesting that past, present, and future are all happening at once.",
+        "source": "Introduced in the Seth material, with parallels in quantum physics and some spiritual teachings."
+    },
+    "Soul Ages": {
+        "definition": "A framework that categorizes souls into different stages of spiritual development, from infant souls to old souls, based on their experiences and maturity.",
+        "source": "Unique to the Michael Teachings."
+    },
+    "Overleaves System": {
+        "definition": "A system that describes personality structures, including roles, goals, modes, attitudes, and centers, which influence an individual's behavior and spiritual lessons.",
+        "source": "Specific to the Michael Teachings."
+    },
+    "Collective Consciousness Guide": {
+        "definition": "A collective entity or group of souls that provide guidance and wisdom from a higher state of consciousness, often acting as spiritual teachers or advisors.",
+        "source": "Seen in the Michael Teachings and other channelings like Ra and the Elohim."
+    },
+    "Unity of All": {
+        "definition": "The belief that all beings, energies, and matter are part of a single, unified whole, where separation is an illusion.",
+        "source": "Core concept of the Law of One (Ra) and various mystical traditions."
+    },
+    "Law of One": {
+        "definition": "A principle stating that all is one, and that every being is part of the same universal consciousness, with the ultimate goal of returning to this unity.",
+        "source": "Central to the Ra material."
+    },
+    "Service-to-Self vs. Service-to-Others": {
+        "definition": "A dichotomy in spiritual paths where beings choose between serving their own interests or the interests of others, with significant implications for spiritual evolution.",
+        "source": "Introduced in the Ra material as a key concept in spiritual polarity."
+    },
+    "Cosmology of Densities": {
+        "definition": "A framework describing different levels of existence or densities, each representing stages of spiritual evolution, from basic physicality to pure consciousness.",
+        "source": "Detailed in the Ra material."
+    },
+    "Law of Attraction": {
+        "definition": "The concept that like attracts like, meaning that positive or negative thoughts bring corresponding experiences into one's life.",
+        "source": "Promoted by Abraham (Esther Hicks) and widely popularized in New Age thought."
+    },
+    "Vibrational Reality Creation": {
+        "definition": "The belief that the vibration or frequency of one's thoughts and emotions determines the reality that manifests around them.",
+        "source": "Central to Abraham's teachings."
+    },
+    "Emotional Guidance System": {
+        "definition": "The idea that emotions serve as indicators of one's alignment with their desires and higher self, guiding decisions and actions towards fulfillment.",
+        "source": "A key concept in Abraham's teachings."
+    },
+    "Belief Systems as Reality Creators": {
+        "definition": "The concept that one's belief systems shape and create the reality they experience, with the power to alter physical and spiritual circumstances.",
+        "source": "Prominent in Bashar's teachings."
+    },
+    "Parallel Realities": {
+        "definition": "The idea that multiple realities or timelines exist simultaneously, each representing different potential outcomes or versions of reality.",
+        "source": "Explored in Bashar's material and quantum metaphysics."
+    },
+    "Multidimensional Exploration": {
+        "definition": "The practice of exploring different dimensions of existence beyond the physical realm, often for spiritual growth and understanding.",
+        "source": "Prominent in Bashar's and other channeled entities' teachings."
+    },
+    "Focus on Excitement": {
+        "definition": "The belief that following what excites you the most is the path to fulfilling your highest potential and spiritual purpose.",
+        "source": "Central to Bashar's teachings."
+    },
+    "Magnetic Service": {
+        "definition": "A concept describing a service that involves aligning with Earth's magnetic fields for spiritual and energetic purposes.",
+        "source": "Part of Kryon's teachings."
+    },
+    "Shift in Earth's Magnetic Field": {
+        "definition": "The idea that changes in Earth's magnetic field are correlated with spiritual shifts and awakenings in humanity.",
+        "source": "Discussed extensively in Kryon's material."
+    },
+    "DNA Activation": {
+        "definition": "The belief that spiritual practices can activate dormant DNA strands, enhancing spiritual abilities and connecting one with higher dimensions.",
+        "source": "Popular in Kryon's and other New Age teachings."
+    },
+    "Spiritual Awakening in Modern Times": {
+        "definition": "The concept that humanity is currently undergoing a significant spiritual awakening, leading to a collective shift in consciousness.",
+        "source": "Central theme in Kryon's messages and many New Age channels."
+    },
+    "Human Evolution through Extraterrestrial Interaction": {
+        "definition": "The belief that extraterrestrials play a significant role in the spiritual and physical evolution of humanity, often acting as guides or engineers.",
+        "source": "Prominent in Pleiadian teachings and other extraterrestrial channelings."
+    },
+    "Earth as a Cosmic School": {
+        "definition": "The idea that Earth serves as a learning environment where souls incarnate to experience challenges and grow spiritually.",
+        "source": "Common in Pleiadian and other New Age teachings."
+    },
+    "Multidimensional Beings": {
+        "definition": "Beings that exist and operate across multiple dimensions of reality, often possessing advanced spiritual knowledge and abilities.",
+        "source": "Discussed in Pleiadian, Arcturian, and other channeled teachings."
+    },
+    "Healing Technologies": {
+        "definition": "Advanced spiritual or extraterrestrial technologies used for healing physical and spiritual ailments, often involving energy or vibration.",
+        "source": "Central to Arcturian teachings and other extraterrestrial channelings."
+    },
+    "Ascension to Higher Dimensions": {
+        "definition": "The process of spiritually evolving to exist in higher dimensions or planes of existence, often seen as a goal of spiritual development.",
+        "source": "Prominent in Arcturian and other New Age teachings."
+    },
+    "Telepathic Communication": {
+        "definition": "The ability to communicate directly through thoughts, bypassing physical speech, often used by advanced beings or in higher dimensions.",
+        "source": "Common in Arcturian and other extraterrestrial channelings."
+    },
+    "Crystalline Energies": {
+        "definition": "Spiritual energies associated with crystals, used for healing, transformation, and connection to higher dimensions.",
+        "source": "Prominent in New Age practices and teachings from various channeled entities like the Hathors."
+    },
+    "Sound Healing": {
+        "definition": "The use of sound frequencies, such as music or vocal tones, to promote physical and spiritual healing.",
+        "source": "Central to the Hathors' teachings and other spiritual traditions."
+    },
+    "Integration of Ancient Egyptian Spiritual Knowledge": {
+        "definition": "Incorporating the spiritual practices, symbols, and wisdom of ancient Egypt into modern spiritual paths for enlightenment and healing.",
+        "source": "Prominent in the Hathors' channelings."
+    },
+    "Creator Beings": {
+        "definition": "Beings that are responsible for creating or shaping the universe, often seen as highly advanced and possessing immense spiritual power.",
+        "source": "Common in the Elohim teachings and various religious cosmologies."
+    },
+    "Angelic Hierarchy": {
+        "definition": "The concept of a structured order of angelic beings, each with specific roles and responsibilities in the spiritual and material worlds.",
+        "source": "Prominent in the Elohim teachings and various religious traditions."
+    },
+    "Divine Order": {
+        "definition": "The belief in a divinely orchestrated structure to the universe and existence, where all events occur according to a higher plan.",
+        "source": "Central to the Elohim teachings and many religious beliefs."
+    },
+    "Spiritual Engineering of Humanity": {
+        "definition": "The idea that humanity's spiritual evolution is guided or engineered by higher beings, often through subtle influence or direct intervention.",
+        "source": "Prominent in Elohim and other channelings involving higher beings."
+    },
+    "Galactic Federation": {
+        "definition": "A coalition of extraterrestrial civilizations working together for the spiritual advancement and protection of the universe.",
+        "source": "Common in Ashtar Command and other extraterrestrial channelings."
+    },
+    "Extraterrestrial Intervention": {
+        "definition": "The involvement of extraterrestrial beings in human affairs, often for the purpose of guiding or accelerating spiritual evolution.",
+        "source": "Central to Ashtar Command and other extraterrestrial teachings."
+    },
+    "Ascension of Earth": {
+        "definition": "The belief that Earth itself is evolving or ascending to a higher state of existence, often accompanied by significant spiritual changes.",
+        "source": "Prominent in Ashtar Command and other New Age teachings."
+    },
+    "Contact with Advanced Civilizations": {
+        "definition": "The idea that humanity is in contact with or will make contact with advanced extraterrestrial civilizations, leading to significant spiritual and technological advancements.",
+        "source": "Discussed in Ashtar Command, Pleiadian, and other extraterrestrial teachings."
+    },
+    "Focus on Hyperdimensional Realities": {
+        "definition": "The study and exploration of realities that exist beyond the traditional dimensions of space and time, often involving higher consciousness.",
+        "source": "Prominent in the Cassiopeian teachings."
+    },
+    "Manipulation by Negative Entities": {
+        "definition": "The concept that negative entities or beings influence or manipulate events, people, or societies for their own purposes.",
+        "source": "Discussed in the Cassiopeian teachings and other channeled materials."
+    },
+    "Cosmological Cycles Affecting Earth": {
+        "definition": "The belief that Earth's spiritual state and evolution are influenced by larger cosmic cycles and rhythms, such as planetary alignments and galactic events.",
+        "source": "Common in Cassiopeian and other New Age teachings."
+    },
+    "Genetic Experiments": {
+        "definition": "Experiments, often attributed to extraterrestrials, involving the manipulation or enhancement of human or other species' genetics for various purposes.",
+        "source": "Prominent in Zeta Reticulan and other extraterrestrial teachings."
+    },
+    "Hybridization Programs": {
+        "definition": "Programs, often attributed to extraterrestrials, focused on creating hybrid beings from multiple species, typically involving humans and extraterrestrials.",
+        "source": "Central to Zeta Reticulan teachings."
+    },
+    "Human Evolution Influenced by Extraterrestrial Intervention": {
+        "definition": "The idea that human evolution has been directly influenced by extraterrestrial beings, either through genetic manipulation or spiritual guidance.",
+        "source": "Common in Zeta Reticulan and other extraterrestrial channelings."
+    },
+    "Cosmic Oversight": {
+        "definition": "The belief that higher cosmic forces or beings are overseeing and guiding the development of the universe and its inhabitants.",
+        "source": "Prominent in Galactic Federation and other extraterrestrial teachings."
+    },
+    "Planetary Ascension": {
+        "definition": "The process by which a planet evolves or ascends to a higher state of existence, often involving the collective consciousness of its inhabitants.",
+        "source": "Central to Galactic Federation and other New Age teachings."
+    },
+    "Interstellar Cooperation": {
+        "definition": "Collaboration between different star systems or civilizations for mutual spiritual advancement and protection.",
+        "source": "Prominent in Galactic Federation and other extraterrestrial teachings."
+    },
+    "Protection from Negative Extraterrestrial Forces": {
+        "definition": "The idea that positive extraterrestrial forces protect humanity and Earth from negative or harmful extraterrestrial influences.",
+        "source": "Common in Galactic Federation and other extraterrestrial channelings."
+    },
+
+    "The Eternal Isle of Paradise": {
+        "definition": "The central and eternal universe, around which all other universes revolve. It serves as the dwelling place of the Universal Father and the headquarters of the administration of all creation.",
+        "source": "Described in The Urantia Book as the spiritual and geographic center of the universe."
+    },
+    "The Seven Superuniverses": {
+        "definition": "The grand universe is composed of seven superuniverses, each consisting of many local universes, which together form the known creation. These superuniverses surround the central universe of Havona.",
+        "source": "A key concept in The Urantia Book's cosmology."
+    },
+    "The Thought Adjuster": {
+        "definition": "A fragment of the Universal Father that indwells human minds, guiding and aiding in spiritual growth and the realization of eternal destiny.",
+        "source": "A central idea in The Urantia Book, highlighting the personal connection between humans and the divine."
+    },
+    "The Lucifer Rebellion": {
+        "definition": "A historical event where Lucifer, a high-ranking spiritual being, rebelled against the Universal Father, leading to widespread spiritual conflict within the universe.",
+        "source": "A major narrative in The Urantia Book, describing the cosmic consequences of Lucifer's actions."
+    },
+
+    "Luciferian Philosophy": {
+        "definition": "The belief system that emphasizes individualism, the pursuit of knowledge, and the rejection of tyranny, often associated with the figure of Lucifer as a symbol of enlightenment and rebellion against oppressive authority.",
+        "source": "Common in Luciferianism and modern occult teachings, as well as in some New Age interpretations of the Lucifer figure."
+    },
+    "The Lightbringer": {
+        "definition": "A title for Lucifer, signifying the role of bringing knowledge and enlightenment, challenging established norms and promoting self-awareness.",
+        "source": "Found in various esoteric traditions, including Gnosticism, and interpreted in different ways across Luciferian and New Age circles."
+    },
+    "Fall of Lucifer": {
+        "definition": "The event in which Lucifer, once a high-ranking angel or spiritual being, was cast out of heaven or the higher realms due to rebellion, leading to a fall from grace and subsequent influence on human affairs.",
+        "source": "A concept from Christian theology, with alternative interpretations in New Age channelings and The Urantia Book."
+    },
+    "Luciferian Ascension": {
+        "definition": "The belief in the potential for spiritual ascension and enlightenment through embracing the principles associated with Lucifer, often involving the pursuit of personal power and knowledge.",
+        "source": "A modern concept in some esoteric and New Age circles, often contrasting with traditional religious views."
+    }
+}}

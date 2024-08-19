@@ -1,0 +1,120 @@
+{
+    "entities": {
+    
+        "Seth (1963 - 1984)": {
+        "common": ["Reincarnation", "Evolution of Consciousness", "Free Will", "Interconnectedness of All Things"],
+        "unique": ["Reality Creation through Thoughts", "Multidimensional Self", "Simultaneous Time"]
+    },
+    "Michael (1970s - Present)": {
+        "common": ["Reincarnation", "Free Will", "Spiritual Evolution", "Interconnectedness of Souls"],
+        "unique": ["Soul Ages", "Overleaves System", "Collective Consciousness Guide"]
+    },
+    "Ra (1981 - 1984)": {
+        "common": ["Unity of All", "Reincarnation", "Evolution of Consciousness", "Free Will", "Interconnectedness"],
+        "unique": ["Law of One", "Service-to-Self vs. Service-to-Others", "Cosmology of Densities"]
+    },
+    "Abraham (1985 - Present)": {
+        "common": ["Free Will", "Reality Creation", "Spiritual Evolution", "Interconnectedness"],
+        "unique": ["Law of Attraction", "Vibrational Reality Creation", "Emotional Guidance System"]
+    },
+    "Bashar (1983 - Present)": {
+        "common": ["Free Will", "Reality Creation", "Spiritual Evolution", "Interconnectedness"],
+        "unique": ["Belief Systems as Reality Creators", "Parallel Realities", "Multidimensional Exploration", "Focus on Excitement"]
+    },
+    "Kryon (1989 - Present)": {
+        "common": ["Spiritual Evolution", "Interconnectedness", "Guidance from Higher Beings", "Cosmic Shifts Affecting Earth"],
+        "unique": ["Magnetic Service", "Shift in Earth's Magnetic Field", "DNA Activation", "Spiritual Awakening in Modern Times"]
+    },
+    "Pleiadians (1988 - Present)": {
+        "common": ["Reincarnation", "Spiritual Evolution", "Guidance from Higher Beings", "Interconnectedness"],
+        "unique": ["Human Evolution through Extraterrestrial Interaction", "Earth as a Cosmic School", "Multidimensional Beings"]
+    },
+    "Arcturians (1990s - Present)": {
+        "common": ["Spiritual Evolution", "Interconnectedness", "Guidance from Higher Beings"],
+        "unique": ["Healing Technologies", "Ascension to Higher Dimensions", "Telepathic Communication", "Crystalline Energies"]
+    },
+    "Hathors (1990s - Present)": {
+        "common": ["Spiritual Evolution", "Interconnectedness", "Higher-Dimensional Beings Guiding Humanity"],
+        "unique": ["Sound Healing", "Multidimensional Consciousness", "Integration of Ancient Egyptian Spiritual Knowledge"]
+    },
+    "Elohim (1990s - Present)": {
+        "common": ["Spiritual Evolution", "Reincarnation", "Interconnectedness", "Divine Guidance"],
+        "unique": ["Creator Beings", "Angelic Hierarchy", "Divine Order", "Spiritual Engineering of Humanity"]
+    },
+    "Ashtar Command (1950s - Present)": {
+        "common": ["Spiritual Evolution", "Interconnectedness", "Guidance from Higher Beings", "Free Will"],
+        "unique": ["Galactic Federation", "Extraterrestrial Intervention", "Ascension of Earth", "Contact with Advanced Civilizations"]
+    },
+    "Cassiopeians (1994 - Present)": {
+        "common": ["Spiritual Evolution", "Free Will", "Interconnectedness", "Reincarnation"],
+        "unique": ["Focus on Hyperdimensional Realities", "Manipulation by Negative Entities", "Cosmological Cycles Affecting Earth"]
+    },
+    "Zeta Reticulans (1980s - Present)": {
+        "common": ["Reincarnation", "Spiritual Evolution", "Guidance from Higher Beings"],
+        "unique": ["Genetic Experiments", "Hybridization Programs", "Human Evolution Influenced by Extraterrestrial Intervention"]
+    },
+    "Galactic Federation (1990s - Present)": {
+        "common": ["Spiritual Evolution", "Interconnectedness", "Guidance from Higher Beings", "Free Will"],
+        "unique": ["Cosmic Oversight", "Planetary Ascension", "Interstellar Cooperation", "Protection from Negative Extraterrestrial Forces"]
+    },
+    
+    "Urantia (1955 - Present)": {
+        "common": ["Spiritual Evolution", "Interconnectedness of All Things", "Divine Order"],
+        "unique": ["The Eternal Isle of Paradise", "The Seven Superuniverses", "The Thought Adjuster", "The Lucifer Rebellion"]
+    },
+   
+    "Lucifer (Various - Present)": {
+        "common": ["Free Will", "Interconnectedness", "Spiritual Evolution"],
+        "unique": ["Luciferian Philosophy", "The Lightbringer", "Fall of Lucifer", "Luciferian Ascension"]
+    },
+    "Daniel Andreev (1906 - 1959)": {
+        "common": ["Spiritual Evolution", "Interconnectedness of All Things", "Divine Order"],
+        "unique": [
+            "Shadanakar", 
+            "Enrof", 
+            "Navna", 
+            "Zatomis", 
+            "Luchetsvet", 
+            "Gagtungr", 
+            "Feminine Demiurge (Utrish)", 
+            "Rozanitsas", 
+            "Velga", 
+            "Satanael", 
+            "Sveti", 
+            "Grads", 
+            "Uitzrats", 
+            "Shemshuk", 
+            "Oikoumene", 
+            "Magga", 
+            "Egregores", 
+            "Arimoya", 
+            "Karmic Currents", 
+            "Izidim", 
+            "Khors", 
+            "Amitabha", 
+            "Darshan", 
+            "Pleroma"
+        ]
+    },
+    "Sophia (Ancient - Present)": {
+        "common": [
+            "Divine Wisdom", 
+            "Spiritual Evolution", 
+            "Interconnectedness of All Things", 
+            "Feminine Aspect of God"
+        ],
+        "unique": [
+            "Sophia", 
+            "Sophiology", 
+            "Gnostic Sophia", 
+            "Divine Feminine", 
+            "Fallen Sophia", 
+            "Redemption of Sophia", 
+            "Sophianic Mysticism", 
+            "Chokhmah", 
+            "Sophia as World Soul", 
+            "Esoteric Sophia"
+        ]
+    }
+
+}}

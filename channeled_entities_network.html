@@ -1,0 +1,1034 @@
+
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #network {
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="network">
+        <html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 2000px;
+                 background-color: #222222;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 2000px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+             #config {
+                 float: left;
+                 width: 400px;
+                 height: 600px;
+             }
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+            <div id="config"></div>
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": [0.5490196078431373, 0.33725490196078434, 0.29411764705882354, 1.0], "font": {"color": "white"}, "id": "Divine Order", "label": "Divine Order", "shape": "dot", "size": 10, "title": "The belief in a divinely orchestrated structure to the universe and existence, where all events occur according to a higher plan."}, {"color": "yellow", "font": {"color": "white"}, "id": "Elohim (1990s - Present)", "label": "Elohim (1990s - Present)", "shape": "dot", "size": 10, "title": "Entity: Elohim (1990s - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Urantia (1955 - Present)", "label": "Urantia (1955 - Present)", "shape": "dot", "size": 10, "title": "Entity: Urantia (1955 - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Daniel Andreev (1906 - 1959)", "label": "Daniel Andreev (1906 - 1959)", "shape": "dot", "size": 10, "title": "Entity: Daniel Andreev (1906 - 1959)"}, {"color": "grey", "font": {"color": "white"}, "id": "Interconnectedness", "label": "Interconnectedness", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "yellow", "font": {"color": "white"}, "id": "Ra (1981 - 1984)", "label": "Ra (1981 - 1984)", "shape": "dot", "size": 10, "title": "Entity: Ra (1981 - 1984)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Abraham (1985 - Present)", "label": "Abraham (1985 - Present)", "shape": "dot", "size": 10, "title": "Entity: Abraham (1985 - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Bashar (1983 - Present)", "label": "Bashar (1983 - Present)", "shape": "dot", "size": 10, "title": "Entity: Bashar (1983 - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Kryon (1989 - Present)", "label": "Kryon (1989 - Present)", "shape": "dot", "size": 10, "title": "Entity: Kryon (1989 - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Pleiadians (1988 - Present)", "label": "Pleiadians (1988 - Present)", "shape": "dot", "size": 10, "title": "Entity: Pleiadians (1988 - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Arcturians (1990s - Present)", "label": "Arcturians (1990s - Present)", "shape": "dot", "size": 10, "title": "Entity: Arcturians (1990s - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Hathors (1990s - Present)", "label": "Hathors (1990s - Present)", "shape": "dot", "size": 10, "title": "Entity: Hathors (1990s - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Ashtar Command (1950s - Present)", "label": "Ashtar Command (1950s - Present)", "shape": "dot", "size": 10, "title": "Entity: Ashtar Command (1950s - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Cassiopeians (1994 - Present)", "label": "Cassiopeians (1994 - Present)", "shape": "dot", "size": 10, "title": "Entity: Cassiopeians (1994 - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Galactic Federation (1990s - Present)", "label": "Galactic Federation (1990s - Present)", "shape": "dot", "size": 10, "title": "Entity: Galactic Federation (1990s - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Lucifer (Various - Present)", "label": "Lucifer (Various - Present)", "shape": "dot", "size": 10, "title": "Entity: Lucifer (Various - Present)"}, {"color": "grey", "font": {"color": "white"}, "id": "Free Will", "label": "Free Will", "shape": "dot", "size": 10, "title": "The ability to make choices independently of external determinism, allowing for personal responsibility in one\u0027s spiritual journey."}, {"color": "yellow", "font": {"color": "white"}, "id": "Seth (1963 - 1984)", "label": "Seth (1963 - 1984)", "shape": "dot", "size": 10, "title": "Entity: Seth (1963 - 1984)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Michael (1970s - Present)", "label": "Michael (1970s - Present)", "shape": "dot", "size": 10, "title": "Entity: Michael (1970s - Present)"}, {"color": "grey", "font": {"color": "white"}, "id": "Spiritual Evolution", "label": "Spiritual Evolution", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "yellow", "font": {"color": "white"}, "id": "Zeta Reticulans (1980s - Present)", "label": "Zeta Reticulans (1980s - Present)", "shape": "dot", "size": 10, "title": "Entity: Zeta Reticulans (1980s - Present)"}, {"color": "yellow", "font": {"color": "white"}, "id": "Sophia (Ancient - Present)", "label": "Sophia (Ancient - Present)", "shape": "dot", "size": 10, "title": "Entity: Sophia (Ancient - Present)"}, {"color": "grey", "font": {"color": "white"}, "id": "Interconnectedness of All Things", "label": "Interconnectedness of All Things", "shape": "dot", "size": 10, "title": "The concept that all beings and phenomena are fundamentally connected at a spiritual and energetic level, implying that actions and thoughts have universal impacts."}, {"color": "grey", "font": {"color": "white"}, "id": "Guidance from Higher Beings", "label": "Guidance from Higher Beings", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Higher-Dimensional Beings Guiding Humanity", "label": "Higher-Dimensional Beings Guiding Humanity", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Interconnectedness of Souls", "label": "Interconnectedness of Souls", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Divine Wisdom", "label": "Divine Wisdom", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Reality Creation", "label": "Reality Creation", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Feminine Aspect of God", "label": "Feminine Aspect of God", "shape": "dot", "size": 10, "title": "The theological concept that God encompasses both masculine and feminine qualities. Sophia, as the feminine aspect, is associated with creation, nurturing, and wisdom. This concept challenges traditional patriarchal views of divinity by emphasizing the importance of balance between masculine and feminine energies in the divine and in human spirituality."}, {"color": "grey", "font": {"color": "white"}, "id": "Evolution of Consciousness", "label": "Evolution of Consciousness", "shape": "dot", "size": 10, "title": "The idea that consciousness evolves and expands through experience, learning, and spiritual development over time and across lifetimes."}, {"color": "grey", "font": {"color": "white"}, "id": "Cosmic Shifts Affecting Earth", "label": "Cosmic Shifts Affecting Earth", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Divine Guidance", "label": "Divine Guidance", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": "grey", "font": {"color": "white"}, "id": "Reincarnation", "label": "Reincarnation", "shape": "dot", "size": 10, "title": "The belief that the soul is reborn into new bodies across different lifetimes, allowing for spiritual evolution and learning."}, {"color": "grey", "font": {"color": "white"}, "id": "Unity of All", "label": "Unity of All", "shape": "dot", "size": 10, "title": "The belief that all beings, energies, and matter are part of a single, unified whole, where separation is an illusion."}, {"color": [0.12156862745098039, 0.4666666666666667, 0.7058823529411765, 1.0], "font": {"color": "white"}, "id": "Reality Creation through Thoughts", "label": "Reality Creation through Thoughts", "shape": "dot", "size": 10, "title": "The belief that thoughts and beliefs directly shape and create one\u0027s reality, emphasizing the power of mindset in manifesting experiences."}, {"color": [0.12156862745098039, 0.4666666666666667, 0.7058823529411765, 1.0], "font": {"color": "white"}, "id": "Multidimensional Self", "label": "Multidimensional Self", "shape": "dot", "size": 10, "title": "The concept that the self exists simultaneously in multiple dimensions or planes of reality, each representing different aspects of one\u0027s consciousness."}, {"color": [0.12156862745098039, 0.4666666666666667, 0.7058823529411765, 1.0], "font": {"color": "white"}, "id": "Simultaneous Time", "label": "Simultaneous Time", "shape": "dot", "size": 10, "title": "The idea that time is not linear but exists simultaneously in multiple forms, suggesting that past, present, and future are all happening at once."}, {"color": [0.6823529411764706, 0.7803921568627451, 0.9098039215686274, 1.0], "font": {"color": "white"}, "id": "Soul Ages", "label": "Soul Ages", "shape": "dot", "size": 10, "title": "A framework that categorizes souls into different stages of spiritual development, from infant souls to old souls, based on their experiences and maturity."}, {"color": [0.6823529411764706, 0.7803921568627451, 0.9098039215686274, 1.0], "font": {"color": "white"}, "id": "Overleaves System", "label": "Overleaves System", "shape": "dot", "size": 10, "title": "A system that describes personality structures, including roles, goals, modes, attitudes, and centers, which influence an individual\u0027s behavior and spiritual lessons."}, {"color": [0.6823529411764706, 0.7803921568627451, 0.9098039215686274, 1.0], "font": {"color": "white"}, "id": "Collective Consciousness Guide", "label": "Collective Consciousness Guide", "shape": "dot", "size": 10, "title": "A collective entity or group of souls that provide guidance and wisdom from a higher state of consciousness, often acting as spiritual teachers or advisors."}, {"color": [1.0, 0.4980392156862745, 0.054901960784313725, 1.0], "font": {"color": "white"}, "id": "Law of One", "label": "Law of One", "shape": "dot", "size": 10, "title": "A principle stating that all is one, and that every being is part of the same universal consciousness, with the ultimate goal of returning to this unity."}, {"color": [1.0, 0.4980392156862745, 0.054901960784313725, 1.0], "font": {"color": "white"}, "id": "Service-to-Self vs. Service-to-Others", "label": "Service-to-Self vs. Service-to-Others", "shape": "dot", "size": 10, "title": "A dichotomy in spiritual paths where beings choose between serving their own interests or the interests of others, with significant implications for spiritual evolution."}, {"color": [1.0, 0.4980392156862745, 0.054901960784313725, 1.0], "font": {"color": "white"}, "id": "Cosmology of Densities", "label": "Cosmology of Densities", "shape": "dot", "size": 10, "title": "A framework describing different levels of existence or densities, each representing stages of spiritual evolution, from basic physicality to pure consciousness."}, {"color": [1.0, 0.7333333333333333, 0.47058823529411764, 1.0], "font": {"color": "white"}, "id": "Law of Attraction", "label": "Law of Attraction", "shape": "dot", "size": 10, "title": "The concept that like attracts like, meaning that positive or negative thoughts bring corresponding experiences into one\u0027s life."}, {"color": [1.0, 0.7333333333333333, 0.47058823529411764, 1.0], "font": {"color": "white"}, "id": "Vibrational Reality Creation", "label": "Vibrational Reality Creation", "shape": "dot", "size": 10, "title": "The belief that the vibration or frequency of one\u0027s thoughts and emotions determines the reality that manifests around them."}, {"color": [1.0, 0.7333333333333333, 0.47058823529411764, 1.0], "font": {"color": "white"}, "id": "Emotional Guidance System", "label": "Emotional Guidance System", "shape": "dot", "size": 10, "title": "The idea that emotions serve as indicators of one\u0027s alignment with their desires and higher self, guiding decisions and actions towards fulfillment."}, {"color": [0.17254901960784313, 0.6274509803921569, 0.17254901960784313, 1.0], "font": {"color": "white"}, "id": "Belief Systems as Reality Creators", "label": "Belief Systems as Reality Creators", "shape": "dot", "size": 10, "title": "The concept that one\u0027s belief systems shape and create the reality they experience, with the power to alter physical and spiritual circumstances."}, {"color": [0.17254901960784313, 0.6274509803921569, 0.17254901960784313, 1.0], "font": {"color": "white"}, "id": "Parallel Realities", "label": "Parallel Realities", "shape": "dot", "size": 10, "title": "The idea that multiple realities or timelines exist simultaneously, each representing different potential outcomes or versions of reality."}, {"color": [0.17254901960784313, 0.6274509803921569, 0.17254901960784313, 1.0], "font": {"color": "white"}, "id": "Multidimensional Exploration", "label": "Multidimensional Exploration", "shape": "dot", "size": 10, "title": "The practice of exploring different dimensions of existence beyond the physical realm, often for spiritual growth and understanding."}, {"color": [0.17254901960784313, 0.6274509803921569, 0.17254901960784313, 1.0], "font": {"color": "white"}, "id": "Focus on Excitement", "label": "Focus on Excitement", "shape": "dot", "size": 10, "title": "The belief that following what excites you the most is the path to fulfilling your highest potential and spiritual purpose."}, {"color": [0.596078431372549, 0.8745098039215686, 0.5411764705882353, 1.0], "font": {"color": "white"}, "id": "Magnetic Service", "label": "Magnetic Service", "shape": "dot", "size": 10, "title": "A concept describing a service that involves aligning with Earth\u0027s magnetic fields for spiritual and energetic purposes."}, {"color": [0.596078431372549, 0.8745098039215686, 0.5411764705882353, 1.0], "font": {"color": "white"}, "id": "Shift in Earth\u0027s Magnetic Field", "label": "Shift in Earth\u0027s Magnetic Field", "shape": "dot", "size": 10, "title": "The idea that changes in Earth\u0027s magnetic field are correlated with spiritual shifts and awakenings in humanity."}, {"color": [0.596078431372549, 0.8745098039215686, 0.5411764705882353, 1.0], "font": {"color": "white"}, "id": "DNA Activation", "label": "DNA Activation", "shape": "dot", "size": 10, "title": "The belief that spiritual practices can activate dormant DNA strands, enhancing spiritual abilities and connecting one with higher dimensions."}, {"color": [0.596078431372549, 0.8745098039215686, 0.5411764705882353, 1.0], "font": {"color": "white"}, "id": "Spiritual Awakening in Modern Times", "label": "Spiritual Awakening in Modern Times", "shape": "dot", "size": 10, "title": "The concept that humanity is currently undergoing a significant spiritual awakening, leading to a collective shift in consciousness."}, {"color": [1.0, 0.596078431372549, 0.5882352941176471, 1.0], "font": {"color": "white"}, "id": "Human Evolution through Extraterrestrial Interaction", "label": "Human Evolution through Extraterrestrial Interaction", "shape": "dot", "size": 10, "title": "The belief that extraterrestrials play a significant role in the spiritual and physical evolution of humanity, often acting as guides or engineers."}, {"color": [1.0, 0.596078431372549, 0.5882352941176471, 1.0], "font": {"color": "white"}, "id": "Earth as a Cosmic School", "label": "Earth as a Cosmic School", "shape": "dot", "size": 10, "title": "The idea that Earth serves as a learning environment where souls incarnate to experience challenges and grow spiritually."}, {"color": [1.0, 0.596078431372549, 0.5882352941176471, 1.0], "font": {"color": "white"}, "id": "Multidimensional Beings", "label": "Multidimensional Beings", "shape": "dot", "size": 10, "title": "Beings that exist and operate across multiple dimensions of reality, often possessing advanced spiritual knowledge and abilities."}, {"color": [0.5803921568627451, 0.403921568627451, 0.7411764705882353, 1.0], "font": {"color": "white"}, "id": "Healing Technologies", "label": "Healing Technologies", "shape": "dot", "size": 10, "title": "Advanced spiritual or extraterrestrial technologies used for healing physical and spiritual ailments, often involving energy or vibration."}, {"color": [0.5803921568627451, 0.403921568627451, 0.7411764705882353, 1.0], "font": {"color": "white"}, "id": "Ascension to Higher Dimensions", "label": "Ascension to Higher Dimensions", "shape": "dot", "size": 10, "title": "The process of spiritually evolving to exist in higher dimensions or planes of existence, often seen as a goal of spiritual development."}, {"color": [0.5803921568627451, 0.403921568627451, 0.7411764705882353, 1.0], "font": {"color": "white"}, "id": "Telepathic Communication", "label": "Telepathic Communication", "shape": "dot", "size": 10, "title": "The ability to communicate directly through thoughts, bypassing physical speech, often used by advanced beings or in higher dimensions."}, {"color": [0.5803921568627451, 0.403921568627451, 0.7411764705882353, 1.0], "font": {"color": "white"}, "id": "Crystalline Energies", "label": "Crystalline Energies", "shape": "dot", "size": 10, "title": "Spiritual energies associated with crystals, used for healing, transformation, and connection to higher dimensions."}, {"color": [0.7725490196078432, 0.6901960784313725, 0.8352941176470589, 1.0], "font": {"color": "white"}, "id": "Sound Healing", "label": "Sound Healing", "shape": "dot", "size": 10, "title": "The use of sound frequencies, such as music or vocal tones, to promote physical and spiritual healing."}, {"color": [0.7725490196078432, 0.6901960784313725, 0.8352941176470589, 1.0], "font": {"color": "white"}, "id": "Multidimensional Consciousness", "label": "Multidimensional Consciousness", "shape": "dot", "size": 10, "title": "No definition available"}, {"color": [0.7725490196078432, 0.6901960784313725, 0.8352941176470589, 1.0], "font": {"color": "white"}, "id": "Integration of Ancient Egyptian Spiritual Knowledge", "label": "Integration of Ancient Egyptian Spiritual Knowledge", "shape": "dot", "size": 10, "title": "Incorporating the spiritual practices, symbols, and wisdom of ancient Egypt into modern spiritual paths for enlightenment and healing."}, {"color": [0.5490196078431373, 0.33725490196078434, 0.29411764705882354, 1.0], "font": {"color": "white"}, "id": "Creator Beings", "label": "Creator Beings", "shape": "dot", "size": 10, "title": "Beings that are responsible for creating or shaping the universe, often seen as highly advanced and possessing immense spiritual power."}, {"color": [0.5490196078431373, 0.33725490196078434, 0.29411764705882354, 1.0], "font": {"color": "white"}, "id": "Angelic Hierarchy", "label": "Angelic Hierarchy", "shape": "dot", "size": 10, "title": "The concept of a structured order of angelic beings, each with specific roles and responsibilities in the spiritual and material worlds."}, {"color": [0.5490196078431373, 0.33725490196078434, 0.29411764705882354, 1.0], "font": {"color": "white"}, "id": "Spiritual Engineering of Humanity", "label": "Spiritual Engineering of Humanity", "shape": "dot", "size": 10, "title": "The idea that humanity\u0027s spiritual evolution is guided or engineered by higher beings, often through subtle influence or direct intervention."}, {"color": [0.7686274509803922, 0.611764705882353, 0.5803921568627451, 1.0], "font": {"color": "white"}, "id": "Galactic Federation", "label": "Galactic Federation", "shape": "dot", "size": 10, "title": "A coalition of extraterrestrial civilizations working together for the spiritual advancement and protection of the universe."}, {"color": [0.7686274509803922, 0.611764705882353, 0.5803921568627451, 1.0], "font": {"color": "white"}, "id": "Extraterrestrial Intervention", "label": "Extraterrestrial Intervention", "shape": "dot", "size": 10, "title": "The involvement of extraterrestrial beings in human affairs, often for the purpose of guiding or accelerating spiritual evolution."}, {"color": [0.7686274509803922, 0.611764705882353, 0.5803921568627451, 1.0], "font": {"color": "white"}, "id": "Ascension of Earth", "label": "Ascension of Earth", "shape": "dot", "size": 10, "title": "The belief that Earth itself is evolving or ascending to a higher state of existence, often accompanied by significant spiritual changes."}, {"color": [0.7686274509803922, 0.611764705882353, 0.5803921568627451, 1.0], "font": {"color": "white"}, "id": "Contact with Advanced Civilizations", "label": "Contact with Advanced Civilizations", "shape": "dot", "size": 10, "title": "The idea that humanity is in contact with or will make contact with advanced extraterrestrial civilizations, leading to significant spiritual and technological advancements."}, {"color": [0.8901960784313725, 0.4666666666666667, 0.7607843137254902, 1.0], "font": {"color": "white"}, "id": "Focus on Hyperdimensional Realities", "label": "Focus on Hyperdimensional Realities", "shape": "dot", "size": 10, "title": "The study and exploration of realities that exist beyond the traditional dimensions of space and time, often involving higher consciousness."}, {"color": [0.8901960784313725, 0.4666666666666667, 0.7607843137254902, 1.0], "font": {"color": "white"}, "id": "Manipulation by Negative Entities", "label": "Manipulation by Negative Entities", "shape": "dot", "size": 10, "title": "The concept that negative entities or beings influence or manipulate events, people, or societies for their own purposes."}, {"color": [0.8901960784313725, 0.4666666666666667, 0.7607843137254902, 1.0], "font": {"color": "white"}, "id": "Cosmological Cycles Affecting Earth", "label": "Cosmological Cycles Affecting Earth", "shape": "dot", "size": 10, "title": "The belief that Earth\u0027s spiritual state and evolution are influenced by larger cosmic cycles and rhythms, such as planetary alignments and galactic events."}, {"color": [0.4980392156862745, 0.4980392156862745, 0.4980392156862745, 1.0], "font": {"color": "white"}, "id": "Genetic Experiments", "label": "Genetic Experiments", "shape": "dot", "size": 10, "title": "Experiments, often attributed to extraterrestrials, involving the manipulation or enhancement of human or other species\u0027 genetics for various purposes."}, {"color": [0.4980392156862745, 0.4980392156862745, 0.4980392156862745, 1.0], "font": {"color": "white"}, "id": "Hybridization Programs", "label": "Hybridization Programs", "shape": "dot", "size": 10, "title": "Programs, often attributed to extraterrestrials, focused on creating hybrid beings from multiple species, typically involving humans and extraterrestrials."}, {"color": [0.4980392156862745, 0.4980392156862745, 0.4980392156862745, 1.0], "font": {"color": "white"}, "id": "Human Evolution Influenced by Extraterrestrial Intervention", "label": "Human Evolution Influenced by Extraterrestrial Intervention", "shape": "dot", "size": 10, "title": "The idea that human evolution has been directly influenced by extraterrestrial beings, either through genetic manipulation or spiritual guidance."}, {"color": [0.7803921568627451, 0.7803921568627451, 0.7803921568627451, 1.0], "font": {"color": "white"}, "id": "Cosmic Oversight", "label": "Cosmic Oversight", "shape": "dot", "size": 10, "title": "The belief that higher cosmic forces or beings are overseeing and guiding the development of the universe and its inhabitants."}, {"color": [0.7803921568627451, 0.7803921568627451, 0.7803921568627451, 1.0], "font": {"color": "white"}, "id": "Planetary Ascension", "label": "Planetary Ascension", "shape": "dot", "size": 10, "title": "The process by which a planet evolves or ascends to a higher state of existence, often involving the collective consciousness of its inhabitants."}, {"color": [0.7803921568627451, 0.7803921568627451, 0.7803921568627451, 1.0], "font": {"color": "white"}, "id": "Interstellar Cooperation", "label": "Interstellar Cooperation", "shape": "dot", "size": 10, "title": "Collaboration between different star systems or civilizations for mutual spiritual advancement and protection."}, {"color": [0.7803921568627451, 0.7803921568627451, 0.7803921568627451, 1.0], "font": {"color": "white"}, "id": "Protection from Negative Extraterrestrial Forces", "label": "Protection from Negative Extraterrestrial Forces", "shape": "dot", "size": 10, "title": "The idea that positive extraterrestrial forces protect humanity and Earth from negative or harmful extraterrestrial influences."}, {"color": [0.7372549019607844, 0.7411764705882353, 0.13333333333333333, 1.0], "font": {"color": "white"}, "id": "The Eternal Isle of Paradise", "label": "The Eternal Isle of Paradise", "shape": "dot", "size": 10, "title": "The central and eternal universe, around which all other universes revolve. It serves as the dwelling place of the Universal Father and the headquarters of the administration of all creation."}, {"color": [0.7372549019607844, 0.7411764705882353, 0.13333333333333333, 1.0], "font": {"color": "white"}, "id": "The Seven Superuniverses", "label": "The Seven Superuniverses", "shape": "dot", "size": 10, "title": "The grand universe is composed of seven superuniverses, each consisting of many local universes, which together form the known creation. These superuniverses surround the central universe of Havona."}, {"color": [0.7372549019607844, 0.7411764705882353, 0.13333333333333333, 1.0], "font": {"color": "white"}, "id": "The Thought Adjuster", "label": "The Thought Adjuster", "shape": "dot", "size": 10, "title": "A fragment of the Universal Father that indwells human minds, guiding and aiding in spiritual growth and the realization of eternal destiny."}, {"color": [0.7372549019607844, 0.7411764705882353, 0.13333333333333333, 1.0], "font": {"color": "white"}, "id": "The Lucifer Rebellion", "label": "The Lucifer Rebellion", "shape": "dot", "size": 10, "title": "A historical event where Lucifer, a high-ranking spiritual being, rebelled against the Universal Father, leading to widespread spiritual conflict within the universe."}, {"color": [0.8588235294117647, 0.8588235294117647, 0.5529411764705883, 1.0], "font": {"color": "white"}, "id": "Luciferian Philosophy", "label": "Luciferian Philosophy", "shape": "dot", "size": 10, "title": "The belief system that emphasizes individualism, the pursuit of knowledge, and the rejection of tyranny, often associated with the figure of Lucifer as a symbol of enlightenment and rebellion against oppressive authority."}, {"color": [0.8588235294117647, 0.8588235294117647, 0.5529411764705883, 1.0], "font": {"color": "white"}, "id": "The Lightbringer", "label": "The Lightbringer", "shape": "dot", "size": 10, "title": "A title for Lucifer, signifying the role of bringing knowledge and enlightenment, challenging established norms and promoting self-awareness."}, {"color": [0.8588235294117647, 0.8588235294117647, 0.5529411764705883, 1.0], "font": {"color": "white"}, "id": "Fall of Lucifer", "label": "Fall of Lucifer", "shape": "dot", "size": 10, "title": "The event in which Lucifer, once a high-ranking angel or spiritual being, was cast out of heaven or the higher realms due to rebellion, leading to a fall from grace and subsequent influence on human affairs."}, {"color": [0.8588235294117647, 0.8588235294117647, 0.5529411764705883, 1.0], "font": {"color": "white"}, "id": "Luciferian Ascension", "label": "Luciferian Ascension", "shape": "dot", "size": 10, "title": "The belief in the potential for spiritual ascension and enlightenment through embracing the principles associated with Lucifer, often involving the pursuit of personal power and knowledge."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Shadanakar", "label": "Shadanakar", "shape": "dot", "size": 10, "title": "The multi-dimensional universe comprising numerous worlds and planes of existence, both material and spiritual."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Enrof", "label": "Enrof", "shape": "dot", "size": 10, "title": "The material world or physical reality as experienced by humans, representing the lowest level of Shadanakar."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Navna", "label": "Navna", "shape": "dot", "size": 10, "title": "The spiritual essence or higher self of an individual that transcends physical existence."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Zatomis", "label": "Zatomis", "shape": "dot", "size": 10, "title": "Guardian spirits or tutelary entities assigned to nations, regions, or individuals, guiding their spiritual development."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Luchetsvet", "label": "Luchetsvet", "shape": "dot", "size": 10, "title": "Radiant spiritual energy emanating from higher planes, influencing and uplifting the material world."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Gagtungr", "label": "Gagtungr", "shape": "dot", "size": 10, "title": "The principal evil force or demonic entity opposing divine order in Andreev\u0027s cosmology."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Feminine Demiurge (Utrish)", "label": "Feminine Demiurge (Utrish)", "shape": "dot", "size": 10, "title": "The creative force responsible for manifesting and nurturing life within the universe, representing the divine feminine principle."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Rozanitsas", "label": "Rozanitsas", "shape": "dot", "size": 10, "title": "Spiritual entities or muses that inspire human creativity, especially in the arts and literature."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Velga", "label": "Velga", "shape": "dot", "size": 10, "title": "The spiritual path of evolution and purification that souls must undertake to ascend through the levels of Shadanakar."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Satanael", "label": "Satanael", "shape": "dot", "size": 10, "title": "A powerful dark entity or fallen angel in Andreev\u00e2\u20ac\u2122s cosmology, symbolizing rebellion against divine order."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Sveti", "label": "Sveti", "shape": "dot", "size": 10, "title": "Paradisiacal realms or layers of existence within Shadanakar filled with divine light."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Grads", "label": "Grads", "shape": "dot", "size": 10, "title": "Large spiritual communities or civilizations existing in various planes within Shadanakar."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Uitzrats", "label": "Uitzrats", "shape": "dot", "size": 10, "title": "Dark, destructive forces or entities residing in the lower planes of Shadanakar."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Shemshuk", "label": "Shemshuk", "shape": "dot", "size": 10, "title": "The spiritual threshold or boundary that souls must cross during their spiritual ascent."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Oikoumene", "label": "Oikoumene", "shape": "dot", "size": 10, "title": "The inhabited world or the collective civilization of humanity from a spiritual perspective."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Magga", "label": "Magga", "shape": "dot", "size": 10, "title": "Spiritual paths or ways followed to achieve enlightenment or spiritual advancement."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Egregores", "label": "Egregores", "shape": "dot", "size": 10, "title": "Collective thought forms or entities created by the collective consciousness of groups or nations."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Arimoya", "label": "Arimoya", "shape": "dot", "size": 10, "title": "The future ideal state or utopian society envisioned by Andreev, where humanity lives in harmony with spiritual laws."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Karmic Currents", "label": "Karmic Currents", "shape": "dot", "size": 10, "title": "Flows of cause-and-effect relationships that influence the spiritual development of individuals and collectives."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Izidim", "label": "Izidim", "shape": "dot", "size": 10, "title": "Beings or entities dwelling in the lower planes of Shadanakar, often associated with negative or harmful energies."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Khors", "label": "Khors", "shape": "dot", "size": 10, "title": "Beings of light inhabiting higher spiritual realms, associated with divine wisdom and guidance."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Amitabha", "label": "Amitabha", "shape": "dot", "size": 10, "title": "A realm of light and purity within Shadanakar, inspired by the concept of the Pure Land."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Darshan", "label": "Darshan", "shape": "dot", "size": 10, "title": "The spiritual vision or direct experience of the divine, often transformative."}, {"color": [0.09019607843137255, 0.7450980392156863, 0.8117647058823529, 1.0], "font": {"color": "white"}, "id": "Pleroma", "label": "Pleroma", "shape": "dot", "size": 10, "title": "The fullness of the divine presence and ultimate reality in Andreev\u0027s cosmology."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Sophia", "label": "Sophia", "shape": "dot", "size": 10, "title": "A divine feminine figure embodying wisdom and often associated with the soul of the world. Sophia is central in Gnostic traditions as a fallen figure who seeks redemption, and in Christian mysticism as the personification of divine wisdom."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Sophiology", "label": "Sophiology", "shape": "dot", "size": 10, "title": "A mystical theology focusing on Sophia as the divine wisdom and the feminine aspect of God, emphasizing her role in the creation of the world and the spiritual evolution of humanity."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Gnostic Sophia", "label": "Gnostic Sophia", "shape": "dot", "size": 10, "title": "In Gnosticism, Sophia is a complex figure who symbolizes both the wisdom of God and the fall into materiality. Her story often involves her descent from the Pleroma (the divine fullness) and her role in the creation of the material world, followed by a quest for restoration and reunion with the divine."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Divine Feminine", "label": "Divine Feminine", "shape": "dot", "size": 10, "title": "The concept of the feminine aspect of divinity, often represented by deities or archetypal figures like Sophia, who embodies qualities such as wisdom, nurturing, and creative power. This aspect is seen as complementary to the masculine aspect of the divine."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Fallen Sophia", "label": "Fallen Sophia", "shape": "dot", "size": 10, "title": "A specific aspect of Sophia in Gnostic cosmology, representing the descent of divine wisdom into the material world. The \u0027fall\u0027 of Sophia is symbolic of the soul\u0027s entrapment in the material realm and its subsequent journey towards redemption and reunion with the divine."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Redemption of Sophia", "label": "Redemption of Sophia", "shape": "dot", "size": 10, "title": "The process by which Sophia, after her fall into the material world, seeks to return to the divine realm, often symbolizing the soul\u0027s journey toward enlightenment and spiritual awakening. This theme is prominent in Gnostic teachings and represents the hope for spiritual salvation."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Sophianic Mysticism", "label": "Sophianic Mysticism", "shape": "dot", "size": 10, "title": "A spiritual practice and belief system centered on the experience and veneration of Sophia as the divine wisdom and feminine aspect of God. It involves contemplative practices aimed at aligning with the wisdom of Sophia and understanding the deeper truths of existence."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Chokhmah", "label": "Chokhmah", "shape": "dot", "size": 10, "title": "The Hebrew term for \u0027wisdom,\u0027 personified in Kabbalah as the second Sephirah on the Tree of Life. Chokhmah represents the intuitive and pre-rational aspect of divine wisdom, closely associated with Sophia in Christian mysticism."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Sophia as World Soul", "label": "Sophia as World Soul", "shape": "dot", "size": 10, "title": "In some philosophical and mystical traditions, Sophia is seen as the World Soul, a mediating principle between the divine and the material world, responsible for the harmony and order of creation."}, {"color": [0.6196078431372549, 0.8549019607843137, 0.8980392156862745, 1.0], "font": {"color": "white"}, "id": "Esoteric Sophia", "label": "Esoteric Sophia", "shape": "dot", "size": 10, "title": "The hidden or inner aspect of Sophia, representing esoteric wisdom that is accessible only through spiritual insight and initiation. This concept emphasizes the transformative power of Sophia\u0027s wisdom for those on the spiritual path."}]);
+                  edges = new vis.DataSet([{"from": "Divine Order", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Divine Order", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "Divine Order", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Interconnectedness", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Interconnectedness", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Hathors (1990s - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Interconnectedness", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "Free Will", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Free Will", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Free Will", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Free Will", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Free Will", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Free Will", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Free Will", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Free Will", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Free Will", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Hathors (1990s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Zeta Reticulans (1980s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "Spiritual Evolution", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Spiritual Evolution", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Interconnectedness of All Things", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Interconnectedness of All Things", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "Interconnectedness of All Things", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Interconnectedness of All Things", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Guidance from Higher Beings", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Guidance from Higher Beings", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Guidance from Higher Beings", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Guidance from Higher Beings", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Guidance from Higher Beings", "to": "Zeta Reticulans (1980s - Present)", "width": 1}, {"from": "Guidance from Higher Beings", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Higher-Dimensional Beings Guiding Humanity", "to": "Hathors (1990s - Present)", "width": 1}, {"from": "Interconnectedness of Souls", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Divine Wisdom", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Reality Creation", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Reality Creation", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Feminine Aspect of God", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Evolution of Consciousness", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Evolution of Consciousness", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Cosmic Shifts Affecting Earth", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Divine Guidance", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Reincarnation", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Reincarnation", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Reincarnation", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Reincarnation", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Reincarnation", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Reincarnation", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Reincarnation", "to": "Zeta Reticulans (1980s - Present)", "width": 1}, {"from": "Unity of All", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Reality Creation through Thoughts", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Multidimensional Self", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Simultaneous Time", "to": "Seth (1963 - 1984)", "width": 1}, {"from": "Soul Ages", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Overleaves System", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Collective Consciousness Guide", "to": "Michael (1970s - Present)", "width": 1}, {"from": "Law of One", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Service-to-Self vs. Service-to-Others", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Cosmology of Densities", "to": "Ra (1981 - 1984)", "width": 1}, {"from": "Law of Attraction", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Vibrational Reality Creation", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Emotional Guidance System", "to": "Abraham (1985 - Present)", "width": 1}, {"from": "Belief Systems as Reality Creators", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Parallel Realities", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Multidimensional Exploration", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Focus on Excitement", "to": "Bashar (1983 - Present)", "width": 1}, {"from": "Magnetic Service", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Shift in Earth\u0027s Magnetic Field", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "DNA Activation", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Spiritual Awakening in Modern Times", "to": "Kryon (1989 - Present)", "width": 1}, {"from": "Human Evolution through Extraterrestrial Interaction", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Earth as a Cosmic School", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Multidimensional Beings", "to": "Pleiadians (1988 - Present)", "width": 1}, {"from": "Healing Technologies", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Ascension to Higher Dimensions", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Telepathic Communication", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Crystalline Energies", "to": "Arcturians (1990s - Present)", "width": 1}, {"from": "Sound Healing", "to": "Hathors (1990s - Present)", "width": 1}, {"from": "Multidimensional Consciousness", "to": "Hathors (1990s - Present)", "width": 1}, {"from": "Integration of Ancient Egyptian Spiritual Knowledge", "to": "Hathors (1990s - Present)", "width": 1}, {"from": "Creator Beings", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Angelic Hierarchy", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Spiritual Engineering of Humanity", "to": "Elohim (1990s - Present)", "width": 1}, {"from": "Galactic Federation", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Extraterrestrial Intervention", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Ascension of Earth", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Contact with Advanced Civilizations", "to": "Ashtar Command (1950s - Present)", "width": 1}, {"from": "Focus on Hyperdimensional Realities", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Manipulation by Negative Entities", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Cosmological Cycles Affecting Earth", "to": "Cassiopeians (1994 - Present)", "width": 1}, {"from": "Genetic Experiments", "to": "Zeta Reticulans (1980s - Present)", "width": 1}, {"from": "Hybridization Programs", "to": "Zeta Reticulans (1980s - Present)", "width": 1}, {"from": "Human Evolution Influenced by Extraterrestrial Intervention", "to": "Zeta Reticulans (1980s - Present)", "width": 1}, {"from": "Cosmic Oversight", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Planetary Ascension", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Interstellar Cooperation", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "Protection from Negative Extraterrestrial Forces", "to": "Galactic Federation (1990s - Present)", "width": 1}, {"from": "The Eternal Isle of Paradise", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "The Seven Superuniverses", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "The Thought Adjuster", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "The Lucifer Rebellion", "to": "Urantia (1955 - Present)", "width": 1}, {"from": "Luciferian Philosophy", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "The Lightbringer", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "Fall of Lucifer", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "Luciferian Ascension", "to": "Lucifer (Various - Present)", "width": 1}, {"from": "Shadanakar", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Enrof", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Navna", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Zatomis", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Luchetsvet", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Gagtungr", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Feminine Demiurge (Utrish)", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Rozanitsas", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Velga", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Satanael", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Sveti", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Grads", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Uitzrats", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Shemshuk", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Oikoumene", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Magga", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Egregores", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Arimoya", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Karmic Currents", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Izidim", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Khors", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Amitabha", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Darshan", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Pleroma", "to": "Daniel Andreev (1906 - 1959)", "width": 1}, {"from": "Sophia", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Sophiology", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Gnostic Sophia", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Divine Feminine", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Fallen Sophia", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Redemption of Sophia", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Sophianic Mysticism", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Chokhmah", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Sophia as World Soul", "to": "Sophia (Ancient - Present)", "width": 1}, {"from": "Esoteric Sophia", "to": "Sophia (Ancient - Present)", "width": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": true,
+        "filter": [
+            "physics"
+        ]
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+                  // if this network requires displaying the configure window,
+                  // put it in its div
+                  options.configure["container"] = document.getElementById("config");
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>
+    </div>
+    
+<h2>List of Unique and Common Ideas</h2>
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; margin-top: 50px;">
+    <tr>
+        <th style="background-color: #f2f2f2;">Idea</th>
+        <th style="background-color: #f2f2f2;">Type</th>
+        <th style="background-color: #f2f2f2;">Definition</th>
+        <th style="background-color: #f2f2f2;">Source</th>
+    </tr>
+
+    <tr>
+        <td>Divine Order</td>
+        <td>Common</td>
+        <td>The belief in a divinely orchestrated structure to the universe and existence, where all events occur according to a higher plan.</td>
+        <td>Central to the Elohim teachings and many religious beliefs.</td>
+    </tr>
+    
+    <tr>
+        <td>Interconnectedness</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Free Will</td>
+        <td>Common</td>
+        <td>The ability to make choices independently of external determinism, allowing for personal responsibility in one's spiritual journey.</td>
+        <td>A fundamental concept in many philosophical and spiritual traditions, including the teachings of Michael, Ra, and Abraham.</td>
+    </tr>
+    
+    <tr>
+        <td>Spiritual Evolution</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Interconnectedness of All Things</td>
+        <td>Common</td>
+        <td>The concept that all beings and phenomena are fundamentally connected at a spiritual and energetic level, implying that actions and thoughts have universal impacts.</td>
+        <td>Central to the Law of One (Ra), Eastern philosophies, and many New Age beliefs.</td>
+    </tr>
+    
+    <tr>
+        <td>Guidance from Higher Beings</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Higher-Dimensional Beings Guiding Humanity</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Interconnectedness of Souls</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Divine Wisdom</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Reality Creation</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Feminine Aspect of God</td>
+        <td>Common</td>
+        <td>The theological concept that God encompasses both masculine and feminine qualities. Sophia, as the feminine aspect, is associated with creation, nurturing, and wisdom. This concept challenges traditional patriarchal views of divinity by emphasizing the importance of balance between masculine and feminine energies in the divine and in human spirituality.</td>
+        <td>Explored in Sophiology, Gnosticism, Christian mysticism, and modern feminist theology.</td>
+    </tr>
+    
+    <tr>
+        <td>Evolution of Consciousness</td>
+        <td>Common</td>
+        <td>The idea that consciousness evolves and expands through experience, learning, and spiritual development over time and across lifetimes.</td>
+        <td>Associated with the teachings of Seth, Ra, and various New Age philosophies.</td>
+    </tr>
+    
+    <tr>
+        <td>Cosmic Shifts Affecting Earth</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Divine Guidance</td>
+        <td>Common</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Reincarnation</td>
+        <td>Common</td>
+        <td>The belief that the soul is reborn into new bodies across different lifetimes, allowing for spiritual evolution and learning.</td>
+        <td>Common across many spiritual traditions including Hinduism, Buddhism, and New Age thought.</td>
+    </tr>
+    
+    <tr>
+        <td>Unity of All</td>
+        <td>Common</td>
+        <td>The belief that all beings, energies, and matter are part of a single, unified whole, where separation is an illusion.</td>
+        <td>Core concept of the Law of One (Ra) and various mystical traditions.</td>
+    </tr>
+    
+    <tr>
+        <td>Reality Creation through Thoughts</td>
+        <td>Unique</td>
+        <td>The belief that thoughts and beliefs directly shape and create one's reality, emphasizing the power of mindset in manifesting experiences.</td>
+        <td>Key concept in the Seth material and Abraham's Law of Attraction.</td>
+    </tr>
+    
+    <tr>
+        <td>Multidimensional Self</td>
+        <td>Unique</td>
+        <td>The concept that the self exists simultaneously in multiple dimensions or planes of reality, each representing different aspects of one's consciousness.</td>
+        <td>Prominent in Seth's teachings and other New Age metaphysical frameworks.</td>
+    </tr>
+    
+    <tr>
+        <td>Simultaneous Time</td>
+        <td>Unique</td>
+        <td>The idea that time is not linear but exists simultaneously in multiple forms, suggesting that past, present, and future are all happening at once.</td>
+        <td>Introduced in the Seth material, with parallels in quantum physics and some spiritual teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Soul Ages</td>
+        <td>Unique</td>
+        <td>A framework that categorizes souls into different stages of spiritual development, from infant souls to old souls, based on their experiences and maturity.</td>
+        <td>Unique to the Michael Teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Overleaves System</td>
+        <td>Unique</td>
+        <td>A system that describes personality structures, including roles, goals, modes, attitudes, and centers, which influence an individual's behavior and spiritual lessons.</td>
+        <td>Specific to the Michael Teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Collective Consciousness Guide</td>
+        <td>Unique</td>
+        <td>A collective entity or group of souls that provide guidance and wisdom from a higher state of consciousness, often acting as spiritual teachers or advisors.</td>
+        <td>Seen in the Michael Teachings and other channelings like Ra and the Elohim.</td>
+    </tr>
+    
+    <tr>
+        <td>Law of One</td>
+        <td>Unique</td>
+        <td>A principle stating that all is one, and that every being is part of the same universal consciousness, with the ultimate goal of returning to this unity.</td>
+        <td>Central to the Ra material.</td>
+    </tr>
+    
+    <tr>
+        <td>Service-to-Self vs. Service-to-Others</td>
+        <td>Unique</td>
+        <td>A dichotomy in spiritual paths where beings choose between serving their own interests or the interests of others, with significant implications for spiritual evolution.</td>
+        <td>Introduced in the Ra material as a key concept in spiritual polarity.</td>
+    </tr>
+    
+    <tr>
+        <td>Cosmology of Densities</td>
+        <td>Unique</td>
+        <td>A framework describing different levels of existence or densities, each representing stages of spiritual evolution, from basic physicality to pure consciousness.</td>
+        <td>Detailed in the Ra material.</td>
+    </tr>
+    
+    <tr>
+        <td>Law of Attraction</td>
+        <td>Unique</td>
+        <td>The concept that like attracts like, meaning that positive or negative thoughts bring corresponding experiences into one's life.</td>
+        <td>Promoted by Abraham (Esther Hicks) and widely popularized in New Age thought.</td>
+    </tr>
+    
+    <tr>
+        <td>Vibrational Reality Creation</td>
+        <td>Unique</td>
+        <td>The belief that the vibration or frequency of one's thoughts and emotions determines the reality that manifests around them.</td>
+        <td>Central to Abraham's teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Emotional Guidance System</td>
+        <td>Unique</td>
+        <td>The idea that emotions serve as indicators of one's alignment with their desires and higher self, guiding decisions and actions towards fulfillment.</td>
+        <td>A key concept in Abraham's teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Belief Systems as Reality Creators</td>
+        <td>Unique</td>
+        <td>The concept that one's belief systems shape and create the reality they experience, with the power to alter physical and spiritual circumstances.</td>
+        <td>Prominent in Bashar's teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Parallel Realities</td>
+        <td>Unique</td>
+        <td>The idea that multiple realities or timelines exist simultaneously, each representing different potential outcomes or versions of reality.</td>
+        <td>Explored in Bashar's material and quantum metaphysics.</td>
+    </tr>
+    
+    <tr>
+        <td>Multidimensional Exploration</td>
+        <td>Unique</td>
+        <td>The practice of exploring different dimensions of existence beyond the physical realm, often for spiritual growth and understanding.</td>
+        <td>Prominent in Bashar's and other channeled entities' teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Focus on Excitement</td>
+        <td>Unique</td>
+        <td>The belief that following what excites you the most is the path to fulfilling your highest potential and spiritual purpose.</td>
+        <td>Central to Bashar's teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Magnetic Service</td>
+        <td>Unique</td>
+        <td>A concept describing a service that involves aligning with Earth's magnetic fields for spiritual and energetic purposes.</td>
+        <td>Part of Kryon's teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Shift in Earth's Magnetic Field</td>
+        <td>Unique</td>
+        <td>The idea that changes in Earth's magnetic field are correlated with spiritual shifts and awakenings in humanity.</td>
+        <td>Discussed extensively in Kryon's material.</td>
+    </tr>
+    
+    <tr>
+        <td>DNA Activation</td>
+        <td>Unique</td>
+        <td>The belief that spiritual practices can activate dormant DNA strands, enhancing spiritual abilities and connecting one with higher dimensions.</td>
+        <td>Popular in Kryon's and other New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Spiritual Awakening in Modern Times</td>
+        <td>Unique</td>
+        <td>The concept that humanity is currently undergoing a significant spiritual awakening, leading to a collective shift in consciousness.</td>
+        <td>Central theme in Kryon's messages and many New Age channels.</td>
+    </tr>
+    
+    <tr>
+        <td>Human Evolution through Extraterrestrial Interaction</td>
+        <td>Unique</td>
+        <td>The belief that extraterrestrials play a significant role in the spiritual and physical evolution of humanity, often acting as guides or engineers.</td>
+        <td>Prominent in Pleiadian teachings and other extraterrestrial channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Earth as a Cosmic School</td>
+        <td>Unique</td>
+        <td>The idea that Earth serves as a learning environment where souls incarnate to experience challenges and grow spiritually.</td>
+        <td>Common in Pleiadian and other New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Multidimensional Beings</td>
+        <td>Unique</td>
+        <td>Beings that exist and operate across multiple dimensions of reality, often possessing advanced spiritual knowledge and abilities.</td>
+        <td>Discussed in Pleiadian, Arcturian, and other channeled teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Healing Technologies</td>
+        <td>Unique</td>
+        <td>Advanced spiritual or extraterrestrial technologies used for healing physical and spiritual ailments, often involving energy or vibration.</td>
+        <td>Central to Arcturian teachings and other extraterrestrial channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Ascension to Higher Dimensions</td>
+        <td>Unique</td>
+        <td>The process of spiritually evolving to exist in higher dimensions or planes of existence, often seen as a goal of spiritual development.</td>
+        <td>Prominent in Arcturian and other New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Telepathic Communication</td>
+        <td>Unique</td>
+        <td>The ability to communicate directly through thoughts, bypassing physical speech, often used by advanced beings or in higher dimensions.</td>
+        <td>Common in Arcturian and other extraterrestrial channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Crystalline Energies</td>
+        <td>Unique</td>
+        <td>Spiritual energies associated with crystals, used for healing, transformation, and connection to higher dimensions.</td>
+        <td>Prominent in New Age practices and teachings from various channeled entities like the Hathors.</td>
+    </tr>
+    
+    <tr>
+        <td>Sound Healing</td>
+        <td>Unique</td>
+        <td>The use of sound frequencies, such as music or vocal tones, to promote physical and spiritual healing.</td>
+        <td>Central to the Hathors' teachings and other spiritual traditions.</td>
+    </tr>
+    
+    <tr>
+        <td>Multidimensional Consciousness</td>
+        <td>Unique</td>
+        <td>No definition available</td>
+        <td>Source not available</td>
+    </tr>
+    
+    <tr>
+        <td>Integration of Ancient Egyptian Spiritual Knowledge</td>
+        <td>Unique</td>
+        <td>Incorporating the spiritual practices, symbols, and wisdom of ancient Egypt into modern spiritual paths for enlightenment and healing.</td>
+        <td>Prominent in the Hathors' channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Creator Beings</td>
+        <td>Unique</td>
+        <td>Beings that are responsible for creating or shaping the universe, often seen as highly advanced and possessing immense spiritual power.</td>
+        <td>Common in the Elohim teachings and various religious cosmologies.</td>
+    </tr>
+    
+    <tr>
+        <td>Angelic Hierarchy</td>
+        <td>Unique</td>
+        <td>The concept of a structured order of angelic beings, each with specific roles and responsibilities in the spiritual and material worlds.</td>
+        <td>Prominent in the Elohim teachings and various religious traditions.</td>
+    </tr>
+    
+    <tr>
+        <td>Divine Order</td>
+        <td>Unique</td>
+        <td>The belief in a divinely orchestrated structure to the universe and existence, where all events occur according to a higher plan.</td>
+        <td>Central to the Elohim teachings and many religious beliefs.</td>
+    </tr>
+    
+    <tr>
+        <td>Spiritual Engineering of Humanity</td>
+        <td>Unique</td>
+        <td>The idea that humanity's spiritual evolution is guided or engineered by higher beings, often through subtle influence or direct intervention.</td>
+        <td>Prominent in Elohim and other channelings involving higher beings.</td>
+    </tr>
+    
+    <tr>
+        <td>Galactic Federation</td>
+        <td>Unique</td>
+        <td>A coalition of extraterrestrial civilizations working together for the spiritual advancement and protection of the universe.</td>
+        <td>Common in Ashtar Command and other extraterrestrial channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Extraterrestrial Intervention</td>
+        <td>Unique</td>
+        <td>The involvement of extraterrestrial beings in human affairs, often for the purpose of guiding or accelerating spiritual evolution.</td>
+        <td>Central to Ashtar Command and other extraterrestrial teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Ascension of Earth</td>
+        <td>Unique</td>
+        <td>The belief that Earth itself is evolving or ascending to a higher state of existence, often accompanied by significant spiritual changes.</td>
+        <td>Prominent in Ashtar Command and other New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Contact with Advanced Civilizations</td>
+        <td>Unique</td>
+        <td>The idea that humanity is in contact with or will make contact with advanced extraterrestrial civilizations, leading to significant spiritual and technological advancements.</td>
+        <td>Discussed in Ashtar Command, Pleiadian, and other extraterrestrial teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Focus on Hyperdimensional Realities</td>
+        <td>Unique</td>
+        <td>The study and exploration of realities that exist beyond the traditional dimensions of space and time, often involving higher consciousness.</td>
+        <td>Prominent in the Cassiopeian teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Manipulation by Negative Entities</td>
+        <td>Unique</td>
+        <td>The concept that negative entities or beings influence or manipulate events, people, or societies for their own purposes.</td>
+        <td>Discussed in the Cassiopeian teachings and other channeled materials.</td>
+    </tr>
+    
+    <tr>
+        <td>Cosmological Cycles Affecting Earth</td>
+        <td>Unique</td>
+        <td>The belief that Earth's spiritual state and evolution are influenced by larger cosmic cycles and rhythms, such as planetary alignments and galactic events.</td>
+        <td>Common in Cassiopeian and other New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Genetic Experiments</td>
+        <td>Unique</td>
+        <td>Experiments, often attributed to extraterrestrials, involving the manipulation or enhancement of human or other species' genetics for various purposes.</td>
+        <td>Prominent in Zeta Reticulan and other extraterrestrial teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Hybridization Programs</td>
+        <td>Unique</td>
+        <td>Programs, often attributed to extraterrestrials, focused on creating hybrid beings from multiple species, typically involving humans and extraterrestrials.</td>
+        <td>Central to Zeta Reticulan teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Human Evolution Influenced by Extraterrestrial Intervention</td>
+        <td>Unique</td>
+        <td>The idea that human evolution has been directly influenced by extraterrestrial beings, either through genetic manipulation or spiritual guidance.</td>
+        <td>Common in Zeta Reticulan and other extraterrestrial channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Cosmic Oversight</td>
+        <td>Unique</td>
+        <td>The belief that higher cosmic forces or beings are overseeing and guiding the development of the universe and its inhabitants.</td>
+        <td>Prominent in Galactic Federation and other extraterrestrial teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Planetary Ascension</td>
+        <td>Unique</td>
+        <td>The process by which a planet evolves or ascends to a higher state of existence, often involving the collective consciousness of its inhabitants.</td>
+        <td>Central to Galactic Federation and other New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Interstellar Cooperation</td>
+        <td>Unique</td>
+        <td>Collaboration between different star systems or civilizations for mutual spiritual advancement and protection.</td>
+        <td>Prominent in Galactic Federation and other extraterrestrial teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Protection from Negative Extraterrestrial Forces</td>
+        <td>Unique</td>
+        <td>The idea that positive extraterrestrial forces protect humanity and Earth from negative or harmful extraterrestrial influences.</td>
+        <td>Common in Galactic Federation and other extraterrestrial channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>The Eternal Isle of Paradise</td>
+        <td>Unique</td>
+        <td>The central and eternal universe, around which all other universes revolve. It serves as the dwelling place of the Universal Father and the headquarters of the administration of all creation.</td>
+        <td>Described in The Urantia Book as the spiritual and geographic center of the universe.</td>
+    </tr>
+    
+    <tr>
+        <td>The Seven Superuniverses</td>
+        <td>Unique</td>
+        <td>The grand universe is composed of seven superuniverses, each consisting of many local universes, which together form the known creation. These superuniverses surround the central universe of Havona.</td>
+        <td>A key concept in The Urantia Book's cosmology.</td>
+    </tr>
+    
+    <tr>
+        <td>The Thought Adjuster</td>
+        <td>Unique</td>
+        <td>A fragment of the Universal Father that indwells human minds, guiding and aiding in spiritual growth and the realization of eternal destiny.</td>
+        <td>A central idea in The Urantia Book, highlighting the personal connection between humans and the divine.</td>
+    </tr>
+    
+    <tr>
+        <td>The Lucifer Rebellion</td>
+        <td>Unique</td>
+        <td>A historical event where Lucifer, a high-ranking spiritual being, rebelled against the Universal Father, leading to widespread spiritual conflict within the universe.</td>
+        <td>A major narrative in The Urantia Book, describing the cosmic consequences of Lucifer's actions.</td>
+    </tr>
+    
+    <tr>
+        <td>Luciferian Philosophy</td>
+        <td>Unique</td>
+        <td>The belief system that emphasizes individualism, the pursuit of knowledge, and the rejection of tyranny, often associated with the figure of Lucifer as a symbol of enlightenment and rebellion against oppressive authority.</td>
+        <td>Common in Luciferianism and modern occult teachings, as well as in some New Age interpretations of the Lucifer figure.</td>
+    </tr>
+    
+    <tr>
+        <td>The Lightbringer</td>
+        <td>Unique</td>
+        <td>A title for Lucifer, signifying the role of bringing knowledge and enlightenment, challenging established norms and promoting self-awareness.</td>
+        <td>Found in various esoteric traditions, including Gnosticism, and interpreted in different ways across Luciferian and New Age circles.</td>
+    </tr>
+    
+    <tr>
+        <td>Fall of Lucifer</td>
+        <td>Unique</td>
+        <td>The event in which Lucifer, once a high-ranking angel or spiritual being, was cast out of heaven or the higher realms due to rebellion, leading to a fall from grace and subsequent influence on human affairs.</td>
+        <td>A concept from Christian theology, with alternative interpretations in New Age channelings and The Urantia Book.</td>
+    </tr>
+    
+    <tr>
+        <td>Luciferian Ascension</td>
+        <td>Unique</td>
+        <td>The belief in the potential for spiritual ascension and enlightenment through embracing the principles associated with Lucifer, often involving the pursuit of personal power and knowledge.</td>
+        <td>A modern concept in some esoteric and New Age circles, often contrasting with traditional religious views.</td>
+    </tr>
+    
+    <tr>
+        <td>Shadanakar</td>
+        <td>Unique</td>
+        <td>The multi-dimensional universe comprising numerous worlds and planes of existence, both material and spiritual.</td>
+        <td>Central concept in Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Enrof</td>
+        <td>Unique</td>
+        <td>The material world or physical reality as experienced by humans, representing the lowest level of Shadanakar.</td>
+        <td>Introduced in 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Navna</td>
+        <td>Unique</td>
+        <td>The spiritual essence or higher self of an individual that transcends physical existence.</td>
+        <td>A key concept in Daniel Andreev's spiritual cosmology.</td>
+    </tr>
+    
+    <tr>
+        <td>Zatomis</td>
+        <td>Unique</td>
+        <td>Guardian spirits or tutelary entities assigned to nations, regions, or individuals, guiding their spiritual development.</td>
+        <td>'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Luchetsvet</td>
+        <td>Unique</td>
+        <td>Radiant spiritual energy emanating from higher planes, influencing and uplifting the material world.</td>
+        <td>Described in Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Gagtungr</td>
+        <td>Unique</td>
+        <td>The principal evil force or demonic entity opposing divine order in Andreev's cosmology.</td>
+        <td>Featured as the embodiment of chaos in 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Feminine Demiurge (Utrish)</td>
+        <td>Unique</td>
+        <td>The creative force responsible for manifesting and nurturing life within the universe, representing the divine feminine principle.</td>
+        <td>A concept from Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Rozanitsas</td>
+        <td>Unique</td>
+        <td>Spiritual entities or muses that inspire human creativity, especially in the arts and literature.</td>
+        <td>From 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Velga</td>
+        <td>Unique</td>
+        <td>The spiritual path of evolution and purification that souls must undertake to ascend through the levels of Shadanakar.</td>
+        <td>A spiritual journey concept in 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Satanael</td>
+        <td>Unique</td>
+        <td>A powerful dark entity or fallen angel in Andreev’s cosmology, symbolizing rebellion against divine order.</td>
+        <td>Described in 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Sveti</td>
+        <td>Unique</td>
+        <td>Paradisiacal realms or layers of existence within Shadanakar filled with divine light.</td>
+        <td>'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Grads</td>
+        <td>Unique</td>
+        <td>Large spiritual communities or civilizations existing in various planes within Shadanakar.</td>
+        <td>Central to the cosmology in Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Uitzrats</td>
+        <td>Unique</td>
+        <td>Dark, destructive forces or entities residing in the lower planes of Shadanakar.</td>
+        <td>From Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Shemshuk</td>
+        <td>Unique</td>
+        <td>The spiritual threshold or boundary that souls must cross during their spiritual ascent.</td>
+        <td>A concept in 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Oikoumene</td>
+        <td>Unique</td>
+        <td>The inhabited world or the collective civilization of humanity from a spiritual perspective.</td>
+        <td>Used in Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Magga</td>
+        <td>Unique</td>
+        <td>Spiritual paths or ways followed to achieve enlightenment or spiritual advancement.</td>
+        <td>A term from Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Egregores</td>
+        <td>Unique</td>
+        <td>Collective thought forms or entities created by the collective consciousness of groups or nations.</td>
+        <td>Concept from Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Arimoya</td>
+        <td>Unique</td>
+        <td>The future ideal state or utopian society envisioned by Andreev, where humanity lives in harmony with spiritual laws.</td>
+        <td>A visionary concept in 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Karmic Currents</td>
+        <td>Unique</td>
+        <td>Flows of cause-and-effect relationships that influence the spiritual development of individuals and collectives.</td>
+        <td>Described in 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Izidim</td>
+        <td>Unique</td>
+        <td>Beings or entities dwelling in the lower planes of Shadanakar, often associated with negative or harmful energies.</td>
+        <td>From Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Khors</td>
+        <td>Unique</td>
+        <td>Beings of light inhabiting higher spiritual realms, associated with divine wisdom and guidance.</td>
+        <td>'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Amitabha</td>
+        <td>Unique</td>
+        <td>A realm of light and purity within Shadanakar, inspired by the concept of the Pure Land.</td>
+        <td>Described in Daniel Andreev's 'The Rose of the World'.</td>
+    </tr>
+    
+    <tr>
+        <td>Darshan</td>
+        <td>Unique</td>
+        <td>The spiritual vision or direct experience of the divine, often transformative.</td>
+        <td>A concept in 'The Rose of the World' by Daniel Andreev.</td>
+    </tr>
+    
+    <tr>
+        <td>Pleroma</td>
+        <td>Unique</td>
+        <td>The fullness of the divine presence and ultimate reality in Andreev's cosmology.</td>
+        <td>'The Rose of the World' by Daniel Andreev, inspired by Gnostic thought.</td>
+    </tr>
+    
+    <tr>
+        <td>Sophia</td>
+        <td>Unique</td>
+        <td>A divine feminine figure embodying wisdom and often associated with the soul of the world. Sophia is central in Gnostic traditions as a fallen figure who seeks redemption, and in Christian mysticism as the personification of divine wisdom.</td>
+        <td>Prominent in Gnostic texts like the Pistis Sophia, Christian mysticism, and modern spiritual channelings.</td>
+    </tr>
+    
+    <tr>
+        <td>Sophiology</td>
+        <td>Unique</td>
+        <td>A mystical theology focusing on Sophia as the divine wisdom and the feminine aspect of God, emphasizing her role in the creation of the world and the spiritual evolution of humanity.</td>
+        <td>Developed by Russian mystics such as Vladimir Solovyov and Sergei Bulgakov, influencing Christian and esoteric thought.</td>
+    </tr>
+    
+    <tr>
+        <td>Gnostic Sophia</td>
+        <td>Unique</td>
+        <td>In Gnosticism, Sophia is a complex figure who symbolizes both the wisdom of God and the fall into materiality. Her story often involves her descent from the Pleroma (the divine fullness) and her role in the creation of the material world, followed by a quest for restoration and reunion with the divine.</td>
+        <td>Found in Gnostic texts such as the Pistis Sophia, The Apocryphon of John, and the Hypostasis of the Archons.</td>
+    </tr>
+    
+    <tr>
+        <td>Divine Feminine</td>
+        <td>Unique</td>
+        <td>The concept of the feminine aspect of divinity, often represented by deities or archetypal figures like Sophia, who embodies qualities such as wisdom, nurturing, and creative power. This aspect is seen as complementary to the masculine aspect of the divine.</td>
+        <td>Central in various spiritual traditions including Gnosticism, Sophiology, and New Age teachings.</td>
+    </tr>
+    
+    <tr>
+        <td>Fallen Sophia</td>
+        <td>Unique</td>
+        <td>A specific aspect of Sophia in Gnostic cosmology, representing the descent of divine wisdom into the material world. The 'fall' of Sophia is symbolic of the soul's entrapment in the material realm and its subsequent journey towards redemption and reunion with the divine.</td>
+        <td>Central to Gnostic texts like the Apocryphon of John and Pistis Sophia.</td>
+    </tr>
+    
+    <tr>
+        <td>Redemption of Sophia</td>
+        <td>Unique</td>
+        <td>The process by which Sophia, after her fall into the material world, seeks to return to the divine realm, often symbolizing the soul's journey toward enlightenment and spiritual awakening. This theme is prominent in Gnostic teachings and represents the hope for spiritual salvation.</td>
+        <td>A recurring theme in Gnostic literature such as the Pistis Sophia.</td>
+    </tr>
+    
+    <tr>
+        <td>Sophianic Mysticism</td>
+        <td>Unique</td>
+        <td>A spiritual practice and belief system centered on the experience and veneration of Sophia as the divine wisdom and feminine aspect of God. It involves contemplative practices aimed at aligning with the wisdom of Sophia and understanding the deeper truths of existence.</td>
+        <td>Found in Christian mysticism, particularly within the works of mystics like Hildegard of Bingen, as well as in modern esoteric traditions.</td>
+    </tr>
+    
+    <tr>
+        <td>Chokhmah</td>
+        <td>Unique</td>
+        <td>The Hebrew term for 'wisdom,' personified in Kabbalah as the second Sephirah on the Tree of Life. Chokhmah represents the intuitive and pre-rational aspect of divine wisdom, closely associated with Sophia in Christian mysticism.</td>
+        <td>Central to Kabbalistic teachings and often linked with the concept of Sophia in comparative mystical studies.</td>
+    </tr>
+    
+    <tr>
+        <td>Sophia as World Soul</td>
+        <td>Unique</td>
+        <td>In some philosophical and mystical traditions, Sophia is seen as the World Soul, a mediating principle between the divine and the material world, responsible for the harmony and order of creation.</td>
+        <td>Explored in the works of philosophers like Plotinus and in modern Sophiology.</td>
+    </tr>
+    
+    <tr>
+        <td>Esoteric Sophia</td>
+        <td>Unique</td>
+        <td>The hidden or inner aspect of Sophia, representing esoteric wisdom that is accessible only through spiritual insight and initiation. This concept emphasizes the transformative power of Sophia's wisdom for those on the spiritual path.</td>
+        <td>Found in esoteric traditions, including Gnosticism, Hermeticism, and modern mystical practices.</td>
+    </tr>
+    </table>
+</body>
+</html>
